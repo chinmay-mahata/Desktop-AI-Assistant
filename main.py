@@ -107,7 +107,7 @@ if __name__ == '__main__':
         print("Listening...")
         query = takeCommand().lower()
 
-        # todo: add more sites
+        # todo: you can add more sites
         sites = [["youtube", "https://www.youtube.com/"], ["google", "https://www.google.com/"],
                  ["wikipedia", "https://www.wikipedia.org/"]]
         for site in sites:
@@ -115,9 +115,9 @@ if __name__ == '__main__':
                 speaker.Speak(f"Opening {site[0]} for you...")
                 webbrowser.open(site[1])
 
-        # todo: play music from youtube
+        # todo: play music from desktop
         if "play music" in query:
-            music_dir = "D:\\Hindi Hits"
+            music_dir = " " #enter your music directory
             random_song = random.choice(os.listdir(music_dir))
             print(random_song)
             os.startfile(os.path.join(music_dir, random_song))
@@ -126,7 +126,7 @@ if __name__ == '__main__':
         elif "weather" in query:
             # Prompts city of user's choice
             city = input("Enter the name of the city:\n")
-            url = f"https://api.weatherapi.com/v1/current.json?key=a3c7ea69fcda4e0e89763208232606&q={city}"
+            url = f"https://api.weatherapi.com/v1/current.json?key=a3c7ea69fcda4e0e89763208232606&q={city}" #enter your weather api here
             r = requests.get(url)
             # speaker = wc.Dispatch("SAPI.SpVoice")
             # print(r.text)
@@ -153,12 +153,12 @@ if __name__ == '__main__':
 
         # todo: open more applications from desktop
         elif 'open vs code' in query:
-            codePath = "C:\\Users\\Chinmay\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            codePath = " " #enter vs code directory for your system
             os.startfile(codePath)
 
         elif 'open whatsapp' in query:
             # path = "C:\\Users\\Chinmay\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
-            path = "C:\\Users\\Chinmay\\Desktop\\WhatsApp.lnk"
+            path = " " #enter whatsapp directory for your system
             os.startfile(path)
 
         elif "using artificial intelligence" in query:
